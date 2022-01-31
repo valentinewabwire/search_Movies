@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //console.log(movie);
 
       Promise.all([
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${movie}`)
           .then((response) => response.json())
           .then((data) => {
             //console.log(data);
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             Promise.all(
               Search.map((search) =>
                 fetch(
-                  `http://www.omdbapi.com/?apikey=${API_KEY}&i=${search.imdbID}`
+                  `https://www.omdbapi.com/?apikey=${API_KEY}&i=${search.imdbID}`
                 ).then((res) => res.json())
               )
             ).then((singleRes) => {
